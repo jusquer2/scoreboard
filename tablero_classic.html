@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero de Béisbol en Línea</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tablero_classic.css">
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider-text">
+          ¡HOME RUN!
+        </div>
+      </div>
+    <div class="scoreboard-line">
+        <!-- Equipos y marcador -->
+        <div class="teams-section">
+            <div class="team visitor" id="visitor-name">
+                <p class="team-name visitor-name" id="label-visitor">VIS</p>
+                <input class="inpO" type="text" id="input-visitor" maxlength="3" title="visitante" value="VIS" />
+                <div class="score" id="visitor-score">0</div>
+                
+            </div>
+            
+            <div class="divider">-</div>
+            
+            <div class="team local" id="local-name">
+                <p class="team-name local-name" id="label-local">LOC</p>
+                <input class="inpO" type="text" id="input-local" maxlength="3" title="local" value="LOC" />
+                <div class="score" id="local-score">0</div>
+                
+            </div>
+        </div>
+        
+        <!-- Bases en formato de rombo -->
+        <div class="bases-section">
+            <div class="bases-container">
+                <div class="base base1" data-base="1" id="base1"></div>
+                <div class="base base2" data-base="2" id="base2"></div>
+                <div class="base base3" data-base="3" id="base3"></div>
+            </div>
+        </div>
+        
+        <!-- Stats -->
+        <div class="stats-section">
+            <div class="stat-group balls">
+                <div class="stat-label">B</div>
+                <div class="stat-indicators balls">
+                    <div class="stat-indicator circle"></div>
+                    <div class="stat-indicator circle"></div>
+                    <div class="stat-indicator circle"></div>
+                </div>
+            </div>
+            
+            <div class="stat-group strikes">
+                <div class="stat-label">S</div>
+                <div class="stat-indicators strikes">
+                    <div class="stat-indicator circle"></div>
+                    <div class="stat-indicator circle"></div>
+                </div>
+            </div>
+            
+            <div class="stat-group outs">
+                <div class="stat-label">O</div>
+                <div class="stat-indicators outs">
+                    <div class="stat-indicator circle"></div>
+                    <div class="stat-indicator circle"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Inning -->
+        <div class="inning-section">
+            <div class="inning-display">
+                <div class="inning-number" id="inning">1</div>
+                <div class="triangle down"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Controles (opcional) -->
+    <div class="controls-line">
+        <h2>Controles del Tablero</h2>
+        <ul>
+            <li><strong>F1:</strong> Aumentar bolas</li>
+            <li><strong>Shift+F1:</strong> Reiniciar bolas</li>
+            <li><strong>F2:</strong> Aumentar strikes</li>
+            <li><strong>Shift+F2:</strong> Reiniciar strikes</li>
+            <li><strong>F3:</strong> Aumentar outs</li>
+            <li><strong>Shift+F3:</strong> Reiniciar outs</li>
+            <li><strong>+/-:</strong> Aumentar/disminuir puntaje</li>
+            <li><strong>1/2/3:</strong> Alternar bases</li>
+            <li><strong>4:</strong> Cambiar dirección del inning</li>
+            <li><strong>5/6:</strong> Ajustar puntajes</li>
+            <li><strong>7:</strong> Ajustar entradas</li>
+            <li><strong>8:</strong> Home run</li>
+        </ul>
+    </div>
+    <div class="controls-line">
+        <button id="btn1" type="button">BOLAS</button>
+        <button id="btn2" type="button">STRIKES</button>
+        <button id="btn3" type="button">OUTS</button>
+    </div>
+    <footer>
+        <p>Author:JUSQUER<br>
+            <a href="../scoreboard/tablero.html">ORIGINAL</a>
+            <a href="../scoreboard/tablero_dark.html">DARK</a></p>
+      </footer>
+    <script src="tablero.js"></script>
+</body>
+</html>

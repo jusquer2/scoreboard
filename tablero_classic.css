@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 20px;
+}
+
+.scoreboard-line {
+    display: flex;
+    align-items: center;
+    background-color: #0d0d0d;
+    border: 3px solid #333;
+    border-radius: 8px;
+    padding: 10px 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: white;
+    font-weight: bold;
+    min-width: 800px;
+}
+
+.teams-section {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.team {
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+}
+
+.team-name {
+    font-size: 1.3em;
+    margin-right: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.visitor-name {
+    color: #ff6b6b;
+}
+
+.local-name {
+    color: #6bb9ff;
+}
+
+.score {
+    font-size: 1.8em;
+    min-width: 30px;
+    text-align: center;
+    background-color: #222;
+    padding: 2px 10px;
+    border-radius: 4px;
+    margin: 0 5px;
+}
+
+.divider {
+    font-size: 1.5em;
+    color: #555;
+    margin: 0 5px;
+}
+
+.bases-section {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.bases-label {
+    margin-right: 10px;
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+.bases-container {
+    display: grid;
+    grid-template-areas: 
+        ". base2 ."
+        "base3 home base1";
+    gap: 8px;
+    position: relative;
+    width: 90px;
+    height: 60px;
+}
+
+.base {
+    width: 24px;
+    height: 24px;
+    background-color: #333;
+    border: 2px solid #444;
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.base::before {
+    content: attr(data-base);
+    position: absolute;
+    transform: rotate(-45deg);
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+.base.active {
+    background-color: #ffcc00;
+    border-color: #ffcc00;
+    box-shadow: 0 0 8px rgba(255, 204, 0, 0.7);
+}
+
+.base1 { grid-area: base1; }
+.base2 { grid-area: base2; }
+.base3 { grid-area: base3; }
+
+.home-plate {
+    grid-area: home;
+    width: 24px;
+    height: 24px;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    background-color: #333;
+    border: 2px solid #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6em;
+}
+
+.stats-section {
+    display: flex;
+    align-items: center;
+}
+
+.stat-group {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.stat-label {
+    margin-right: 8px;
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+.stat-indicators {
+    display: flex;
+}
+
+.stat-indicator {
+    width: 16px;
+    height: 16px;
+    margin: 0 3px;
+    background-color: #333;
+    border: 2px solid #444;
+    border-radius: 50%;
+}
+
+.balls .stat-indicator.active {
+    background-color: #1a75ff;
+    border-color: #1a75ff;
+}
+
+.strikes .stat-indicator.active {
+    background-color: #ff3333;
+    border-color: #ff3333;
+}
+
+.outs .stat-indicator.active {
+    background-color: #ff3333;
+    border-color: #ff3333;
+}
+
+.inning-section {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.inning-display {
+    display: flex;
+    align-items: center;
+}
+
+.inning-number {
+    font-size: 1.2em;
+    margin: 0 5px;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 12px solid #ffcc00;
+}
+
+.triangle.down {
+    border-top: none;
+    border-bottom: 12px solid #ffcc00;
+}
+
+/* Estilos para los controles (opcional) */
+.controls-line {
+    margin-top: 20px;
+    background-color: #0d0d0d;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #333;
+    color: white;
+    font-size: 0.9em;
+    min-width: 800px;
+}
+
+.controls-line h2 {
+    margin-bottom: 10px;
+    color: #ffcc00;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+.controls-line ul {
+    columns: 3;
+    list-style-type: none;
+}
+
+.controls-line li {
+    margin-bottom: 5px;
+    break-inside: avoid;
+}
+.inpO {
+    opacity: 0;
+    width: 1px;
+}
+
+.hide {
+    display: none;
+}
+
+.inpO.show {
+    opacity: 1;
+    background-color: #2a2a2a;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 5px;
+    border-radius: 4px;
+    width: auto;
+}
+.slider-container {
+    opacity: 0;
+    top: 41px;
+    left: 833px;
+    width: 150px;
+    overflow: hidden;
+    background: #f0f0f0;
+    border: 2px solid #ccc;
+    position: absolute;
+    height: 50px;
+    z-index: 1000;
+}
+
+  .slider-text {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: scroll-text 5s linear infinite;
+    font-size: 40px;
+    line-height: 50px;
+  }
+  .active-slide{
+    opacity: 1;
+  }
+
+  @keyframes scroll-text {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Efecto flip cuando cambia el marcador */
+        .score.changing {
+            animation: flip 0.6s ease-in-out;
+        }
+
+        @keyframes flip {
+            0% {
+                transform: rotateX(0deg);
+            }
+            50% {
+                transform: rotateX(90deg);
+            }
+            100% {
+                transform: rotateX(0deg);
+            }
+        }

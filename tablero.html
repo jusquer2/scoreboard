@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero de Béisbol</title>
+    <link rel="stylesheet" href="tablero.css">
+</head>
+
+<body>
+    <div class="slider-container">
+        <div class="slider-text">
+          ¡HOME RUN!
+        </div>
+      </div>
+    <!-- Dentro del div.scoreboard, reorganiza así: -->
+<div class="scoreboard">
+    <!-- Primera fila: Marcadores y bases -->
+    <div class="top-section">
+        <div class="team-score">
+            <div class="team-name" id="visitor-name">
+                <p id="label-visitor">Visitante</p>
+                <input class="inpO" type="text" id="input-visitor" title="visitante" value="Visitante" />
+            </div>
+            <div class="score" id="visitor-score">0</div>
+            <div class="team-name">
+                <small id="visitor-at-bate"></small>
+            </div>
+            <div class="team-name">
+                <small id="visitor-hoy"></small>
+            </div>
+        </div>
+
+        <div class="bases-container">
+            <div class="bases">
+                <div class="base base1">1</div>
+                <div class="base base2">2</div>
+                <div class="base base3">3</div>
+                <div class="home-plate"><span class="number" id="inning">1</span><i class="triangle down"></i></div>
+            </div>
+        </div>
+
+        <div class="team-score">
+            <div class="team-name" id="local-name">
+                <p id="label-local">Local</p>
+                <input class="inpO" type="text" id="input-local" title="local" value="Local" />
+            </div>
+            <div class="score" id="local-score">0</div>
+            <div class="team-name">
+                <small id="local-at-bate"></small>
+            </div>
+            <div class="team-name">
+                <small id="local-hoy"></small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Segunda fila: Balls, Strikes, Outs -->
+    <div class="stats-section">
+        <div class="stats">
+            <div class="stat-group balls">
+                <span>Bolas: </span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+            </div>
+            <div class="stat-group strikes">
+                <span>Strikes: </span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+            </div>
+            <div class="stat-group outs">
+                <span>Outs: </span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="controls-line">
+    <h2>Controles del Tablero</h2>
+    <ul>
+        <li><strong>F1:</strong> Aumentar bolas</li>
+        <li><strong>Shift+F1:</strong> Reiniciar bolas</li>
+        <li><strong>F2:</strong> Aumentar strikes</li>
+        <li><strong>Shift+F2:</strong> Reiniciar strikes</li>
+        <li><strong>F3:</strong> Aumentar outs</li>
+        <li><strong>Shift+F3:</strong> Reiniciar outs</li>
+        <li><strong>+/-:</strong> Aumentar/disminuir puntaje</li>
+        <li><strong>1/2/3:</strong> Alternar bases</li>
+        <li><strong>4:</strong> Cambiar dirección del inning</li>
+        <li><strong>5/6:</strong> Ajustar puntajes</li>
+        <li><strong>7:</strong> Ajustar entradas</li>
+        <li><strong>8:</strong> Home run</li>
+    </ul>
+</div>
+<div class="controls-line">
+    <button id="btn1" type="button">BOLAS</button>
+    <button id="btn2" type="button">STRIKES</button>
+    <button id="btn3" type="button">OUTS</button>
+</div>
+    <footer>
+        <p>Author:JUSQUER<br>
+        <a href="../scoreboard/tablero_classic.html">CLASSIC</a>
+        <a href="../scoreboard/tablero_dark.html">DARK</a></p>
+      </footer>
+</body>
+<script src="tablero.js"></script>
+
+</html>
